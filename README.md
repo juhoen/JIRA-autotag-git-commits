@@ -25,7 +25,7 @@ BRANCH=$(git rev-parse --abbrev-ref HEAD)
 FILENAME=$(basename $BRANCH)
 
 # This line copies tag from the branch name
-TAG=$(echo "$FILENAME" | sed -n 's/\([A-Z]\{1,4\}-[1-9]\{1,6\}\).*/\1/p')
+TAG=$(echo "$FILENAME" | sed -n 's/\([A-Z]\{1,4\}-[0-9]\{1,6\}\).*/\1/p')
 
 echo "$TAG"' '$(cat "$1") > "$1"
 ```
